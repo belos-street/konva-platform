@@ -1,5 +1,6 @@
 import { Collapse } from 'antd'
 import { Rect } from './rect'
+import { Circle } from './circle'
 import '../styles/base.css'
 
 const { Panel } = Collapse
@@ -7,12 +8,12 @@ const { Panel } = Collapse
 export function Base() {
   return (
     <div className="base-container">
-      <Collapse defaultActiveKey={['1']}>
-        <Panel header="矩形 Rect" key="1">
+      <Collapse defaultActiveKey={['rect', 'circle']}>
+        <Panel header="Rect" key="rect">
           <Rect />
         </Panel>
-        <Panel header="圆" key="2">
-          <p>2</p>
+        <Panel header="Circle Ellipse Wedge" key="circle">
+          <Circle />
         </Panel>
         <Panel header="线" key="3">
           <p>3</p>

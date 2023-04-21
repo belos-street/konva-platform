@@ -23,7 +23,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
               </NavLink>
             </Space>
           </>
-        }></Route>
+        }
+      />
       <Route path="/base" element={<Base />} />
       <Route path="/canvas" element={<Canvas />} />
     </Routes>
