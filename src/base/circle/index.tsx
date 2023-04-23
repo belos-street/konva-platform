@@ -32,11 +32,12 @@ export function Circle() {
 
     const wedge = new Konva.Wedge({
       x: stage.width() / 2 + 100,
-      y: stage.height() / 2 - 30,
+      y: stage.height() / 2,
       fill: 'green',
       stroke: 'black',
       radius: 60,
-      angle: 90 //角度
+      angle: 90, //角度
+      rotation: -45 //旋转角度
     })
 
     layer.add(circle)

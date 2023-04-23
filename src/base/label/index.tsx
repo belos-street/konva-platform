@@ -3,43 +3,49 @@ import Konva from 'konva'
 import { Stage } from 'konva/lib/Stage'
 
 /**
- * @argument text 文本
- * @argument TextPath 文本路径
- * @link http://konvajs-doc.bluehymn.com/docs/shapes/Text.html
+ * @argument label 展示文本
+ * @argument tag 标签
  */
 
-export function Text() {
+export function Label() {
   const draw = (stage: Stage) => {
     const layer = new Konva.Layer()
 
-    const text = new Konva.Text({
-      x: stage.width() / 4 - 80,
-      y: stage.height() / 2 - 20,
-      text: 'Hello World!',
-      fontSize: 40,
-      fill: 'orange',
-      fontFamily: 'Calibri'
+    const label = new Konva.Label({
+      x: stage.width() / 2 + 40,
+      y: stage.height() / 2
     })
 
-    const textPath = new Konva.TextPath({
-      x: stage.width() / 2 - 80,
-      y: stage.height() / 4,
-      text: 'Hello World!Hello World!Hello World!Hello World!Hello World!Hello World!',
-      fontSize: 16,
+    const tag = new Konva.Tag({
       fill: 'green',
-      fontFamily: 'Calibri',
-      data: 'M10,10 C0,0 10,150 100,100 S300,150 4.0.180' //同svg路径 https://www.runoob.com/svg/svg-path.html
+      pointerDirection: 'down', //箭头朝向
+      stroke: 'black',
+      pointerHeight: 10, //箭头宽度
+      pointerWidth: 10, //箭头高度
+      shadowBlur: 20, //虚化程度 数值越大 虚化程度越高
+      shadowOffsetX: 10, //虚化 x轴偏移
+      shadowOffsetY: 10, //虚化 y轴偏移
+      shadowColor: 'green'
     })
 
-    layer.add(text)
-    layer.add(textPath)
+    const text = new Konva.Text({
+      text: 'hello world ~',
+      fontSize: 16,
+      fill: 'orange',
+      padding: 15 //内边距
+    })
+
+    label.add(tag)
+    label.add(text)
+
+    layer.add(label)
     stage.add(layer)
   }
 
   const initCanvas = () => {
-    const { clientWidth, clientHeight } = document.querySelector<HTMLCanvasElement>('#canvas-text')!
+    const { clientWidth, clientHeight } = document.querySelector<HTMLCanvasElement>('#canvas-label')!
     const stage = new Konva.Stage({
-      container: 'canvas-text',
+      container: 'canvas-label',
       width: clientWidth,
       height: clientHeight
     })
@@ -51,5 +57,5 @@ export function Text() {
     initCanvas()
   }, [])
 
-  return <div id="canvas-text" className="container-box" />
+  return <div id="canvas-label" className="container-box" />
 }
