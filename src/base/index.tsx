@@ -6,6 +6,8 @@ import { Text } from './text'
 import { Ring } from './ring'
 import { Label } from './label'
 import { RegularPolygon } from './regular-polygon'
+import { Image } from './image'
+import { Group } from './group'
 import '../styles/base.css'
 
 const { Panel } = Collapse
@@ -13,7 +15,7 @@ const { Panel } = Collapse
 export function Base() {
   return (
     <div className="base-container">
-      <Collapse defaultActiveKey={['rect', 'circle', 'line', 'text', 'ring', 'label', 'regularPolygon']}>
+      <Collapse defaultActiveKey={[]}>
         <Panel header="Rect" key="rect">
           <Rect />
         </Panel>
@@ -34,6 +36,12 @@ export function Base() {
         </Panel>
         <Panel header="RegularPolygon Arrow" key="regularPolygon">
           <RegularPolygon />
+        </Panel>
+        <Panel header="Image Animation" key="image">
+          <Image />
+        </Panel>
+        <Panel header="Group" key="group">
+          <Group />
         </Panel>
       </Collapse>
     </div>
