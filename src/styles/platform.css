@@ -1,0 +1,50 @@
+.platform-container {
+  --platform-bg-color: #323e52;
+  --platform-bg-mid-color: #283142;
+  --platform-bg-high-color: #202835;
+  --platform-gap: 12px;
+}
+
+.platform-container {
+  width: 100%;
+  height: 100%;
+  background-color: var(--platform-bg-color);
+  display: flex;
+  flex-direction: column;
+}
+
+
+.platform-container .p-header {
+  height: 48px;
+  padding: 0 var(--platform-gap);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.p-header .hr--button__import {
+  margin-right: var(--platform-gap);
+}
+
+.platform-container .p-footer {
+  text-align: center;
+  font-size: 12px;
+}
+
+.platform-container .p-main {
+  flex: 1;
+  display: flex;
+  width: 100%;
+}
+
+.p-main .p-main--container__left,
+.p-main .p-main--container__right {
+  width: 400px;
+  height: 100%;
+  background-color: var(--platform-bg-mid-color);
+}
+
+.p-main .p-main--center {
+  flex: 1;
+  background-color: var(--platform-bg-high-color);
+}

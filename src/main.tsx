@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
 import './styles/index.css'
 import { Button, Space } from 'antd'
 import { Base } from './base'
-import { Canvas } from './canvas'
+import { Platform } from './platform'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   // <React.StrictMode>
@@ -18,15 +18,15 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
               <NavLink to="/base">
                 <Button type="link">Base</Button>
               </NavLink>
-              <NavLink to="/canvas">
-                <Button type="link">Canvas</Button>
+              <NavLink to="/platform">
+                <Button type="link">Platform</Button>
               </NavLink>
             </Space>
           </>
         }
       />
       <Route path="/base" element={<Base />} />
-      <Route path="/canvas" element={<Canvas />} />
+      <Route path="/platform" element={<Platform />} />
     </Routes>
   </BrowserRouter>
   // </React.StrictMode>
